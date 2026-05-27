@@ -114,6 +114,47 @@ h6 {
   }
 }
 
+/* Logo wrapper */
+
+#header .logo .logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#header .logo .logo-icon {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+#header .logo .logo-text {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Remove old max-height effect from both images */
+#header .logo img {
+  max-height: unset;
+}
+
+/* Mobile */
+
+@media (max-width: 992px) {
+  #header .logo .logo-icon {
+    height: 64px;
+  }
+
+  #header .logo .logo-text {
+    height: 64px;
+  }
+
+  #header .logo .logo-wrapper {
+    gap: 6px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
