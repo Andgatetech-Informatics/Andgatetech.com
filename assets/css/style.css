@@ -76,7 +76,7 @@ h6 {
   background: #fff;
   transition: all 0.5s;
   z-index: 997;
-  padding: 20px 0;
+  padding: 12px 0;
 }
 
 #header.header-scrolled {
@@ -102,7 +102,7 @@ h6 {
 }
 
 #header .logo img {
-  max-height: 44px;
+  max-height: 54px;
 }
 
 @media (max-width: 992px) {
@@ -714,8 +714,11 @@ section {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  transition: 0.4s;
+  transition: all 0.4s ease;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
@@ -732,18 +735,16 @@ section {
 
 .product-content {
   padding: 25px;
-}
 
-.product-content h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #111;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .product-content p {
   color: #666;
   line-height: 1.7;
+  flex-grow: 1;
 }
 
 .visit-btn {
@@ -752,6 +753,7 @@ section {
   padding: 10px 24px;
   background: #f58220;
   color: #fff;
+  align-self: flex-start;
   text-decoration: none;
   border-radius: 6px;
   font-size: 14px;
@@ -2442,6 +2444,35 @@ section {
 .inner-page .container > p img {
   margin-bottom: 30px;
 }
+
+/* ================= ACHIEVEMENT SECTION ================= */
+
+.achievement-section {
+  padding: 80px 0;
+}
+
+.achievement-content {
+  padding: 20px;
+}
+
+.achievement-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.achievement-content p {
+  color: #666;
+  line-height: 1.8;
+}
+
+.carousel-events img {
+  height: 450px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
 .footercustom-icon {
   display: inline-block;
   vertical-align: middle;
