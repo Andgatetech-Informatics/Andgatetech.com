@@ -1,27 +1,37 @@
 <?php
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST')
-    {
-       $name = $_POST["name"];
-       $email = $_POST["email"];
-       $subject = $_POST["subject"];
-       $content = $_POST["message"];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        $toEmail = "vedank.kulshrestha6@gmail.com";
-        $mailHeaders = "From: " . $name . "<". $email .">\r\n";
-        if(mail($toEmail, $subject, $content, $mailHeaders)) {
-            $message = "Your message has been sent. Thank you.";
-            $type = "success";
-            echo "OK";
-        }else{
-            $message = "Unable to send your message!";
-            $type = "failed";
-            echo "FAIL";
-        }
+    $name = htmlspecialchars($_POST["name"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $subject = htmlspecialchars($_POST["subject"]);
+    $content = htmlspecialchars($_POST["message"]);
+
+    $toEmail = "andgate_hrteam@andgatetech.com";
+
+    $message = "
+    Name: $name
+
+    Email: $email
+
+    Subject: $subject
+
+    Message:
+    $content
+    ";
+
+    $headers  = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type:text/plain;charset=UTF-8\r\n";
+    $headers .= "From: Website Contact Form <noreply@yourdomain.com>\r\n";
+    $headers .= "Reply-To: $email\r\n";
+
+    if(mail($toEmail, $subject, $message, $headers)) {
+        echo "OK";
     } else {
-        
-        echo "Method Not Allowed";
-        
+        echo "FAIL";
     }
-	
+
+} else {
+    echo "Method Not Allowed";
+}
 ?>
